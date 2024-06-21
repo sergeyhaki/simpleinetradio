@@ -1,9 +1,10 @@
 //this file: simpleinetradio.ino
 #include "Audio.h" //see repository at github "https://github.com/schreibfaul1/ESP32-audioI2S"
 
-#define I2S_DOUT      25 // connect to PCM5102
-#define I2S_BCLK      27 // connect to PCM5102
-#define I2S_LRC       26 // connect to PCM5102
+#define I2S_DOUT      25 // connect to DIN PCM5102 
+#define I2S_BCLK      27 // connect to BCK PCM5102
+#define I2S_LRC       26 // connect to LCK PCM5102
+//FLT DMP SCL PCM5102 connect to GND,  XMT connect to 3V3
 
 //global vars
 Audio audio;
