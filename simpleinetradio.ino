@@ -1,4 +1,4 @@
-//this file: simpleinetradio.ino
+#include "WiFiMulti.h"
 #include "Audio.h" //see repository at github "https://github.com/schreibfaul1/ESP32-audioI2S"
 
 #define I2S_DOUT      25 // connect to DIN PCM5102 
@@ -15,7 +15,13 @@ String stations = "https://stream.radiojar.com/hcrb063nn3quv";
 
 void setup() {
   Serial.begin(115200);
-  WiFi.begin(ssid.c_str(), password.c_str());
+  WiFi.mode(WIFI_STA);
+  wifiMulti.addAP(ssid.c_str(), password.c_str());
+  wifiMulti.run();
+  if(WiFi.status() != WL_CONNECTED){
+        WiFi.disconnect(true);
+        wifiMulti.run();
+  }
   audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
   audio.setVolume(21); // 0...21
   audio.connecttohost(stations.c_str());
