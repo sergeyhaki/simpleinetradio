@@ -1,6 +1,10 @@
 //this file: simpleinetradio.ino
 #include "Audio.h" //see repository at github "https://github.com/schreibfaul1/ESP32-audioI2S"
 
+#define I2S_DOUT      25
+#define I2S_BCLK      27
+#define I2S_LRC       26
+
 //global vars
 Audio audio;
 String ssid =     "*****";
@@ -17,8 +21,7 @@ void setup() {
 }
 
 void loop() {
-    audio.loop();
-    tp.loop();
+    audio.loop();    
 }
 
 
