@@ -11,7 +11,7 @@ Audio audio;
 String ssid =     "*****";
 String password = "*****";
 
-String stations = "https://stream.radiojar.com/hcrb063nn3quv";
+String stations = "https://n11.radiojar.com/hcrb063nn3quv?rj-ttl=5&rj-tok=AAABkDzB7xUA_lAB0I6_wEQ4fg";
 
 void setup() {
   Serial.begin(115200);
