@@ -12,7 +12,7 @@ WiFiMulti wifiMulti;
 String ssid = "****";
 String password = "****";
 
-String stations = "https://n11.radiojar.com/hcrb063nn3quv?rj-ttl=5&rj-tok=AAABkDzB7xUA_lAB0I6_wEQ4fg";
+String stations = "http://51.91.104.2/hcrb063nn3quv?rj-ttl=5&rj-tok=AAABlDgCj5gA-t7ejTRZ-xUSxA";
 
 
 void setup() {
@@ -27,9 +27,7 @@ void setup() {
   audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
   audio.setVolume(12);  // 0...21
 
-
-  audio.connecttohost(stations.c_str());
-  //audio.connecttohost("https://n11.radiojar.com/hcrb063nn3quv?rj-ttl=5&rj-tok=AAABkDzB7xUA_lAB0I6_wEQ4fg");
+  audio.connecttohost(stations.c_str()); 
 }
 
 void loop() {
